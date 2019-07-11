@@ -1,0 +1,22 @@
+{
+  "name": "msd-task",
+  "version": "1.0.0",
+  "description": "Simple ship API",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=local nodemon --inspect server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cz0/msd-example.git"
+  },
+  "author": "Stepan Manko <stepan.manko@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cz0/msd-example/issues"
+  },
+  "homepage": "https://github.com/cz0/msd-example#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1"
+  }
+}
