@@ -1,26 +1,27 @@
-const Hapi = require("@hapi/hapi");
+const Glue = require("@hapi/glue");
 
-const init = async () => {
-  const server = Hapi.server({
-    port: 3000,
-    host: "localhost"
-  });
+const serverConfig = require("./config/manifest");
 
-  server.route({
-    method: "GET",
-    path: "/",
-    handler: (request, h) => {
-      return "Hello World!";
-    }
-  });
+const options = { ...serverConfig.options, relativeTo: __dirname };
 
-  await server.start();
-  console.log("Server running on %s", server.info.uri);
+const startServer = async () => {
+  try {
+    const server = await Glue.compose(
+      serverConfig.manifest,
+      options
+    );
+    await server.start();
+    console.log(`Server listening on ${server.info.uri}`);
+    console.log(`Server is running in ${process.env.NODE_ENV} mode`);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 };
 
-process.on("unhandledRejection", err => {
-  console.log(err);
+process.on("unhandledRejection", (reason, p) => {
+  console.error("Unhandled Rejection at:", p, "reason:", reason);
   process.exit(1);
 });
 
-init();
+startServer();

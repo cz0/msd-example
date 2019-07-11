@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/cz0/msd-example#readme",
   "dependencies": {
-    "@hapi/hapi": "^18.3.1"
+    "@hapi/glue": "^6.1.0",
+    "@hapi/hapi": "^18.3.1",
+    "confidence": "^4.0.2"
   }
 }
