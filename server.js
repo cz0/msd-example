@@ -1,4 +1,5 @@
 const Glue = require("@hapi/glue");
+const logger = require("pino")();
 
 const serverConfig = require("./config/manifest");
 
@@ -11,16 +12,16 @@ const startServer = async () => {
       options
     );
     await server.start();
-    console.log(`Server listening on ${server.info.uri}`);
-    console.log(`Server is running in ${process.env.NODE_ENV} mode`);
+    logger.info(`Server listening on ${server.info.uri}`);
+    logger.info(`Server is running in ${process.env.NODE_ENV} mode`);
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     process.exit(1);
   }
 };
 
 process.on("unhandledRejection", (reason, p) => {
-  console.error("Unhandled Rejection at:", p, "reason:", reason);
+  logger.error("Unhandled Rejection at:", p, "reason:", reason);
   process.exit(1);
 });
 
