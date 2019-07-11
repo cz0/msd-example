@@ -4,7 +4,8 @@
   "description": "Simple ship API",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=local nodemon --inspect server"
+    "start": "NODE_ENV=local nodemon --inspect server",
+    "test": "lab -v test/features/ship/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
     "@hapi/glue": "^6.1.0",
     "@hapi/hapi": "^18.3.1",
     "confidence": "^4.0.2"
+  },
+  "devDependencies": {
+    "@hapi/code": "^5.3.1",
+    "@hapi/lab": "^19.1.0"
   }
 }
