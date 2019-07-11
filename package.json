@@ -4,7 +4,8 @@
   "description": "Simple ship API",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=local nodemon --inspect server",
+    "start": "nodemon --inspect server",
+    "migrate": "node_modules/.bin/knex migrate:latest",
     "test": "lab -v test/features/ship/*.spec.js"
   },
   "repository": {
