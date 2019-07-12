@@ -28,6 +28,14 @@
   $ curl -d '{"name":"The Black Pearl", "speed":100}' -H "Content-Type: application/json" -XPOST http://localhost:3000/api/v1/ships
   ```
 
+## TODO
+
+* eslint (linter)
+* hapi-swagger (documentation)
+* Dockerfile + docker-compose
+* husky + lint-staged (git hooks)
+* circleci2 configuration
+* initial population of shipyard
 
          
 
