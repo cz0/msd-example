@@ -35,6 +35,7 @@
 * Dockerfile + docker-compose
 * husky + lint-staged (git hooks)
 * circleci2 configuration
+* gitflow
 * initial population of shipyard
 
          
