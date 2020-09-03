@@ -20,7 +20,7 @@
   "homepage": "https://github.com/cz0/msd-example#readme",
   "dependencies": {
     "@hapi/glue": "^6.1.0",
-    "@hapi/hapi": "^18.3.1",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^15.1.0",
     "confidence": "^4.0.2",
     "dotenv": "^8.0.0",
